@@ -19,7 +19,7 @@ The Workflow ID is retrived by the action from your Github secrets, using the en
 
 ```
 steps:
-  - uses: kedoska/invoke-paragon-action@v1.x
+  - uses: kedoska/invoke-paragon-action@v1
     env:
       PARAGON_WORKFLOW_ID: ${{ secrets.PARAGON_WORKFLOW_ID }}
 ```
@@ -29,7 +29,7 @@ To use request header parameters, sending values to Paragon as HTTP Headers, pas
 
 ```
 steps:
-  - uses: kedoska/invoke-paragon-action@v1.x
+  - uses: kedoska/invoke-paragon-action@v1
     with:
         repository: ${{ github.repository }}
         status: "completed"
