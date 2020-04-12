@@ -2,4 +2,4 @@ name: 'Invoke Paragon Endpoint'
 description: 'Trigger any Paragon endpoint from your actions.'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
