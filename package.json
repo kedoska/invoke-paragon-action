@@ -1,6 +1,6 @@
 {
   "name": "invoke-paragon-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Trigger any Paragon endpoint from your actions.",
   "main": "lib/main.js",
   "scripts": {
