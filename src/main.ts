@@ -36,7 +36,10 @@ async function run(): Promise<void> {
     const response = await fetch(url, {
       method: 'post',
       body: JSON.stringify(payload),
-      headers: getInputsAsHeaders()
+      headers: {
+        'Content-Type': 'application/json',
+        ...getInputsAsHeaders()
+      }
     })
 
     if (!response.ok) {
@@ -59,7 +62,9 @@ interface Inputs {
 function getInputsAsHeaders(): Inputs {
   return Object.entries(process.env).reduce(
     (result: Inputs, [key, value = '']) => {
-      if (!key.startsWith('INPUT_')) return result
+      if (!key.startsWith('INPUT_')) {
+        return result
+      }
 
       const inputName = key.substr('INPUT_'.length).toLowerCase()
       result[inputName] = yaml.safeLoad(value)

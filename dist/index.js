@@ -2656,7 +2656,7 @@ function run() {
             const response = yield node_fetch_1.default(url, {
                 method: 'post',
                 body: JSON.stringify(payload),
-                headers: getInputsAsHeaders()
+                headers: Object.assign({ 'Content-Type': 'application/json' }, getInputsAsHeaders())
             });
             if (!response.ok) {
                 core.setFailed(`something went wrong: workflow returned ${response.status} (${response.statusText})`);
@@ -2672,8 +2672,9 @@ function run() {
 // Copy/Paste/Change from https://github.com/octokit/request-action/blob/a43ad662a5c7b9f83ff18ff5d40564f214c23925/index.js#L41
 function getInputsAsHeaders() {
     return Object.entries(process.env).reduce((result, [key, value = '']) => {
-        if (!key.startsWith('INPUT_'))
+        if (!key.startsWith('INPUT_')) {
             return result;
+        }
         const inputName = key.substr('INPUT_'.length).toLowerCase();
         result[inputName] = js_yaml_1.default.safeLoad(value);
         return result;
