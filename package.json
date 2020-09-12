@@ -34,7 +34,7 @@
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
     "@octokit/webhooks": "^7.1.2",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@types/node": "^12.7.12",
