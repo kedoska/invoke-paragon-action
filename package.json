@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/kedoska/invoke-paragon-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.3",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^2.1.1",
     "@octokit/webhooks": "^7.1.2",
     "node-fetch": "^2.6.1"
